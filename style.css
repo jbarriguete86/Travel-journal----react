@@ -18,8 +18,7 @@ p{
     display: flex;
     flex-direction: column; 
     margin: auto;
-    max-width: 550px;
-    height: 704px;
+    
     background-color: white;
     justify-content:space-between;
 }
@@ -133,4 +132,13 @@ footer{
     font-size: 1rem;
     font-weight:lighter;
     margin-right: 5px;
+}
+
+/* break point */
+
+@media screen and (min-width: 1024px) {
+    .container{
+        max-width: 550px;
+        height: 704px;
+    }
 }
