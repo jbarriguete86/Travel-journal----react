@@ -2,31 +2,31 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: black;
+body {
+    width: 100vw;
+    background-color: rgb(22, 3, 3);
     font-family: 'Inter', sans-serif;
 }
 
 h1,
 h3,
 a,
-p{
- font-size: 0.64rem;   
+p {
+    font-size: 0.64rem;
 }
 
-.container{
+.container {
     display: flex;
-    flex-direction: column; 
-    margin: auto;
-    width: 100vh;
-    height: 100vh;
-    background-color: white;
-    justify-content:space-between;
+    flex-direction: column;
+    width: 100%;
+    height:100%;
+    background-color: rgb(247, 233, 233);
+    justify-content: space-between;
 }
 
 /* Header component */
 
-header{
+header {
     display: flex;
     height: 55px;
     background-color: #F55A5A;
@@ -36,90 +36,91 @@ header{
     align-items: center;
 }
 
-.header--icon{
+.header--icon {
     width: 24px;
     height: 24px;
     margin-right: 10px;
 }
 
-.header--title{
+.header--title {
     font-size: 0.90rem;
     font-weight: 500;
 }
 
 /* Card component */
-.card--element{
+.card--element {
     display: flex;
     flex-direction: column;
     margin-top: 45px;
     margin-left: 40px;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
-.card--container{
+.card--container {
     margin-bottom: 36px;
     display: grid;
     width: 100%;
-    grid-template: repeat(7, auto)/ 125px auto 1fr;
-    grid-template-areas: 
-    "picture . ."
-    "picture . location"
-    "picture . title"
-    "picture . ."
-    "picture . dates"
-    "picture . description"
-    "picture . .";
+    grid-template: repeat(7, auto)/ repeat(3, auto);
+    grid-template-areas:
+        "picture picture picture"
+        "picture picture picture"
+        ". . ."
+        "location location ."
+        "title title ."
+        "dates dates ."
+        "description description description";
     grid-column-gap: 19px;
-    
+    padding-right: 40px;
+
 }
 
-.card--image{
+.card--image {
     grid-area: picture;
     border-radius: 6px;
-    width: 125px;
-    height: 168px;
+    width: 100%;
+    max-height: 400px;
 }
 
-.card--location{
+.card--location {
     display: flex;
-    grid-area: location; 
+    grid-area: location;
     align-items: center;
     margin: 0;
 }
 
-.card--location > img{
+.card--location>img {
     width: 7px;
     height: 9px;
     margin-right: 3px;
 }
 
-.card--location > h3{
+.card--location>h3 {
     margin-right: 10px;
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
 
-.card--location > a{
+.card--location>a {
     color: #918E9B;
 }
 
-.card--title{
-  grid-area: title;  
-  font-size: 1.56rem;
-  margin: 0;
+.card--title {
+    grid-area: title;
+    font-size: 1.56rem;
+    margin: 0;
 }
 
-.card--dates{
+.card--dates {
     grid-area: dates;
     font-weight: bold;
 }
 
-.card--description{
+.card--description {
     grid-area: description;
 }
 
 /* Footer component */
 
-footer{
+footer {
     display: flex;
     height: 24px;
     background-color: #F55A5A;
@@ -129,17 +130,49 @@ footer{
     align-items: center;
 }
 
-.footer--copyright{
+.footer--copyright {
     font-size: 1rem;
-    font-weight:lighter;
+    font-weight: lighter;
     margin-right: 5px;
 }
 
 /* break point */
 
-@media screen and (min-width: 1024px) {
-    .container{
-        max-width: 550px;
-        height: 704px;
+
+
+@media screen and (min-width: 768px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        margin: auto;
+        width: 80%;
+        height: 90%;
+    }
+
+    header {
+        height: 55px;
+    }
+
+    .card--container {
+        grid-template: repeat(7, auto)/ 125px auto 1fr;
+        grid-template-areas:
+            "picture . ."
+            "picture . location"
+            "picture . title"
+            "picture . ."
+            "picture . dates"
+            "picture . description"
+            "picture . .";
+        grid-column-gap: 19px;
+    }
+
+    .card--image {
+        width: 125px;
+        height: 168px;
     }
 }
