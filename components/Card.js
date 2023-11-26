@@ -1,7 +1,6 @@
 import React from "react"
 
 export default function Card(props){
-    console.log(props)
     return (
         <div className="card--container">
             <img className="card--image" src={props.imageUrl} alt={`image of ${props.title}`}/>
